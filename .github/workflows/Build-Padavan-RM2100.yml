@@ -113,9 +113,9 @@ jobs:
         #########################################################################################
 
         ##### 修改内存空间和 storage空间10m#######################################################
-        sed -i 's/CONFIG_MTD_STORE_PART_SIZ=0x0400000/CONFIG_MTD_STORE_PART_SIZ=0x3C00000/g' /opt/rt-n56u/trunk/configs/boards/RM2100/kernel-3.4.x-5.0.config
-        sed -i 's/size_etc="6M"/size_etc="60M"/g' /opt/rt-n56u/trunk/user/scripts/dev_init.sh
-        sed -i 's/mtd_part_size=65536/mtd_part_size=62914560/g' /opt/rt-n56u/trunk/user/scripts/mtd_storage.sh
+        sed -i 's/CONFIG_MTD_STORE_PART_SIZ=0x0400000/CONFIG_MTD_STORE_PART_SIZ=0x6400000/g' /opt/rt-n56u/trunk/configs/boards/RM2100/kernel-3.4.x-5.0.config
+        sed -i 's/size_etc="6M"/size_etc="100M"/g' /opt/rt-n56u/trunk/user/scripts/dev_init.sh
+        sed -i 's/mtd_part_size=65536/mtd_part_size=104857600/g' /opt/rt-n56u/trunk/user/scripts/mtd_storage.sh
 
         ##########################################################################################
         IP_PREFIX=$(echo $LAN_IP | cut -d '.' -f 1-3)
